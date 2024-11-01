@@ -1,5 +1,6 @@
 #UDPClient.py
 import time
+from datetime import datetime
 from socket import *
 serverName = 'localhost' #127.0.0.01
 serverPort = 12000 #Range: 0-65000
@@ -19,8 +20,8 @@ for sequence_number in range(1,11):
         print(f'Server Response:\n {modifiedMessage.decode()}')
         # Calculating RTT
         rtt = time.time() - send_time
-        print(f"RTT = {rtt}")
+        print(f'RTT = {rtt:.6f} (seconds)')
     except timeout:
         print('Request Timed Out')
 # Closing socket
-clientSocket.close() #Closing socket
+clientSocket.close() #Closing socket 
