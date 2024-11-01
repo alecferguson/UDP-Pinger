@@ -4,6 +4,7 @@ from socket import *
 serverName = 'localhost' #127.0.0.01
 serverPort = 12000 #Range: 0-65000
 clientSocket = socket(AF_INET, SOCK_DGRAM) #select ipv4(afnet) and socket kind UDP(SOCK_DGRAM)
+clientSocket.settimeout(1.0) #Setting timeout
 for sequence_number in range(1,11):
     # Record start time
     send_time = time.time()
